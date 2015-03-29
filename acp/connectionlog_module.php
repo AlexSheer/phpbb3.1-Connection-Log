@@ -18,8 +18,6 @@ class connectionlog_module
 		global $db, $template, $request, $table_prefix, $user, $phpbb_log, $phpbb_container, $config, $phpbb_root_path, $phpEx;
 		$user->add_lang('mcp');
 
-		//define ('CONNECTION_LOG_TABLE', $table_prefix.'connect_log');
-
 		$phpbb_log->set_log_table(CONNECTION_LOG_TABLE);
 
 		$whois		= $request->variable('whois', false);
@@ -148,7 +146,6 @@ class connectionlog_module
 		$s_asearch = '';
 		foreach($list_actions as $key => $action)
 		{
-			//print "$key $action<br />";
 			$selected = ($action == $asearch) ? ' selected="selected"' : '';
 			$s_asearch .= '<option value="' . $action . '"' . $selected . '>' . $user->lang[$action] . '</option>';
 		}
