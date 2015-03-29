@@ -180,12 +180,21 @@ class listener implements EventSubscriberInterface
 
 		if ($mode == 'settings')
 		{
-			$display_vars['vars']['legend_lc'] = 'ACP_CONNECTION_LOGS';
-			$display_vars['vars']['lc_expire_days'] = array('lang' => 'LC_PRUNE_DAY', 'validate' => 'int:0:60',	'type' => 'number:0:9999', 'explain' => true, 'append' => ' ' . $this->user->lang['DAYS']);
-			$display_vars['vars']['legend3'] = 'ACP_SUBMIT_CHANGES';
+			$count = 0;
+			foreach($display_vars['vars'] as $key => $value)
+			{
+				if (strripos($key, 'legend') === 0)
+				{
+					$count++;
+				}
+			}
+			$display_vars['vars'][$count] = 'ACP_CONNECTION_LOGS';
+			$display_vars['vars']['lc_expire_days'] = array('lang' => 'LC_PRUNE_DAY', 'validate' => 'int:0:60',   'type' => 'number:0:9999', 'explain' => true, 'append' => ' ' . $this->user->lang['DAYS']);
+			$display_vars['vars']['legend5'] = 'ACP_SUBMIT_CHANGES';
 			$event['display_vars'] = $display_vars;
 		}
 	}
+
 	public function add_log_autologin($event)
 	{
 		if (isset($this->user->data['session_created']) && $this->user->data['session_created'] && $this->user->data['session_autologin'])
