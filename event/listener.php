@@ -188,9 +188,10 @@ class listener implements EventSubscriberInterface
 					$count++;
 				}
 			}
-			$display_vars['vars'][$count] = 'ACP_CONNECTION_LOGS';
+			$next = $count + 1;
+			$display_vars['vars']['legend' . $count . ''] = 'ACP_CONNECTION_LOGS';
 			$display_vars['vars']['lc_expire_days'] = array('lang' => 'LC_PRUNE_DAY', 'validate' => 'int:0:60',   'type' => 'number:0:9999', 'explain' => true, 'append' => ' ' . $this->user->lang['DAYS']);
-			$display_vars['vars'][$count + 1] = 'ACP_SUBMIT_CHANGES';
+			$display_vars['vars']['legend' . $next . ''] = 'ACP_SUBMIT_CHANGES';
 			$event['display_vars'] = $display_vars;
 		}
 	}
