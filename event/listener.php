@@ -154,21 +154,22 @@ class listener implements EventSubscriberInterface
 
 	public function add_sql_where($event)
 	{
+		$event['sql_additional'] = '';
 		if($usearch = $this->request->variable('usearch', '', true))
 		{
 			$this->template->assign_var('USEARCH', $usearch);
-			$event['sql_additional'] = " AND u.username_clean " . $this->db->sql_like_expression($this->db->get_any_char() . utf8_clean_string($usearch) . $this->db->get_any_char()) . ' ';
+			$event['sql_additional'] .= " AND u.username_clean " . $this->db->sql_like_expression(str_replace('*', $this->db->get_any_char(), utf8_clean_string($usearch))) . ' ';
 		}
 
 		if($isearch = $this->request->variable('isearch', ''))
 		{
 			$this->template->assign_var('ISEARCH', $isearch);
-			$event['sql_additional'] = " AND l.log_ip " . $this->db->sql_like_expression($isearch . $this->db->get_any_char()) . ' ';
+			$event['sql_additional'] .= " AND l.log_ip " . $this->db->sql_like_expression(str_replace('*', $this->db->get_any_char(), $isearch)) . ' ';
 		}
 
 		if ($asearch =  $this->request->variable('asearch', ''))
 		{
-			$event['sql_additional'] = ($asearch != 'ACP_LOGS_ALL') ? ' AND l.log_operation LIKE \''. $asearch .'\'' : '';
+			$event['sql_additional'] .= ($asearch != 'ACP_LOGS_ALL') ? ' AND l.log_operation LIKE \''. $asearch .'\'' : '';
 			$this->template->assign_var('ASEARCH', $asearch);
 		}
 	}
