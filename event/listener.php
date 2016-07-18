@@ -154,7 +154,7 @@ class listener implements EventSubscriberInterface
 
 	public function add_sql_where($event)
 	{
-		$event['sql_additional'] = '';
+		//$event['sql_additional'] = '';
 		if($usearch = $this->request->variable('usearch', '', true))
 		{
 			$this->template->assign_var('USEARCH', $usearch);
