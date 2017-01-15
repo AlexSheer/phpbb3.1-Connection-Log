@@ -69,8 +69,7 @@ class connectionlog_0_0_1 extends \phpbb\db\migration\migration
 			array('config.add', array('lc_prune_gc', '3600', '0')),
 			array('config.add', array('lc_prune_last_gc', '0', '1')),
 			// ACP
-			array('module.add', array('acp', 'ACP_FORUM_LOGS', 'ACP_CONNECTION_LOGS')),
-			array('module.add', array('acp', 'ACP_CONNECTION_LOGS', array(
+			array('module.add', array('acp', 'ACP_FORUM_LOGS', array(
 				'module_basename'	=> '\sheer\connectionlog\acp\connectionlog_module',
 				'module_langname'	=> 'ACP_CONNECTION_LOGS',
 				'module_mode'		=> 'connection',
