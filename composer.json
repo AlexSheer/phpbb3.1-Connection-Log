@@ -3,14 +3,14 @@
     "type": "phpbb-extension",
     "description": "Connection log",
     "homepage": "http://phpbbguru.net",
-    "version": "0.0.1",
-    "time": "2015-03-22",
+    "version": "1.0.0",
+    "time": "2017-01-16",
     "license": "GPL-2.0",
     "authors": [
         {
             "name": "Sheer",
             "homepage": "http://phpbbguru.net",
-            "role": "Support team"
+            "role": "Developer"
         }
     ],
     "require": {
