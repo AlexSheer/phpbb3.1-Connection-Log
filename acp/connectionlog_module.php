@@ -74,7 +74,7 @@ class connectionlog_module
 
 				$db->sql_query($sql);
 				$phpbb_log->set_log_table(LOG_TABLE);
-				add_log('admin', 'LOG_CLEAR_CONNECTION_LOG', $user->data['username']);
+				$phpbb_log->add('admin', $user->data['user_id'], $user->data['session_ip'], 'LOG_CLEAR_CONNECTION_LOG', time());
 				redirect($this->u_action);
 			}
 			else
