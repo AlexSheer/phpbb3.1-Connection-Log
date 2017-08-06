@@ -146,7 +146,7 @@ class connectionlog_module
 		);
 
 		$s_asearch = '';
-		foreach($list_actions as $key => $action)
+		foreach ($list_actions as $key => $action)
 		{
 			$selected = ($action == $asearch) ? ' selected="selected"' : '';
 			$s_asearch .= '<option value="' . $action . '"' . $selected . '>' . $user->lang[$action] . '</option>';
