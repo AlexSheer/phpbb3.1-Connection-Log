@@ -117,7 +117,7 @@ class listener implements EventSubscriberInterface
 		$result = $this->db->sql_query_limit($sql, 1);
 		$row = $this->db->sql_fetchrow($result);
 		$this->db->sql_freeresult($result);
-		if(empty($row))
+		if (empty($row))
 		{
 			$message = ($event['admin']) ? 'LOG_ADMIN_AUTH_SUCCESS' : 'LOG_AUTH_SUCCESS';
 			$this->phpbb_log->set_log_table(CONNECTION_LOG_TABLE);
@@ -139,7 +139,7 @@ class listener implements EventSubscriberInterface
 		$result = $event['result'];
 		$username = $event['username'];
 
-		if($this->user->data['session_page'] == 'adm/index.php')
+		if ($this->user->data['session_page'] == 'adm/index.php')
 		{
 			$message = 'LOG_ADMIN_AUTH_FAIL';
 		}
@@ -155,13 +155,13 @@ class listener implements EventSubscriberInterface
 	public function add_sql_where($event)
 	{
 		//$event['sql_additional'] = '';
-		if($usearch = $this->request->variable('usearch', '', true))
+		if ($usearch = $this->request->variable('usearch', '', true))
 		{
 			$this->template->assign_var('USEARCH', $usearch);
 			$event['sql_additional'] .= " AND u.username_clean " . $this->db->sql_like_expression(str_replace('*', $this->db->get_any_char(), utf8_clean_string($usearch))) . ' ';
 		}
 
-		if($isearch = $this->request->variable('isearch', ''))
+		if ($isearch = $this->request->variable('isearch', ''))
 		{
 			$this->template->assign_var('ISEARCH', $isearch);
 			$event['sql_additional'] .= " AND l.log_ip " . $this->db->sql_like_expression(str_replace('*', $this->db->get_any_char(), $isearch)) . ' ';
@@ -182,7 +182,7 @@ class listener implements EventSubscriberInterface
 		if ($mode == 'settings')
 		{
 			$count = 0;
-			foreach($display_vars['vars'] as $key => $value)
+			foreach ($display_vars['vars'] as $key => $value)
 			{
 				if (strripos($key, 'legend') === 0)
 				{
