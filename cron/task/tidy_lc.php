@@ -54,7 +54,7 @@ class tidy_lc extends \phpbb\cron\task\base
 	*/
 	public function should_run()
 	{
-		if($this->config['lc_expire_days'])
+		if ($this->config['lc_expire_days'])
 		{
 			return $this->config['lc_prune_last_gc'] < time() - $this->config['lc_prune_gc'];
 		}
