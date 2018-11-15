@@ -26,6 +26,9 @@ class connectionlog_module
 		$deletemark	= $request->variable('delmarked', false, false, \phpbb\request\request_interface::POST);
 		$deleteall	= $request->variable('delall', false, false, \phpbb\request\request_interface::POST);
 		$marked		= $request->variable('mark', array(0));
+		$ip 		= $request->variable('ip', '');
+		$usearch	= utf8_normalize_nfc($request->variable('usearch', '', true));
+		$isearch	= $request->variable('isearch', '');
 		$asearch	= $request->variable('asearch', 'ACP_LOGS_ALL');
 
 		// Sort keys
@@ -42,7 +45,6 @@ class connectionlog_module
 			$user->add_lang('acp/users');
 			$this->page_title = 'WHOIS';
 			$this->tpl_name = 'simple_body';
-			$ip = $request->variable('ip', '');
 			$domain = gethostbyaddr($ip);
 			$ipwhois = user_ipwhois($ip);
 
@@ -120,7 +122,7 @@ class connectionlog_module
 		{
 			$template->assign_block_vars('log', array(
 				'USERNAME'	=> $row['username_full'],
-				'IP'		=> $row['ip'],
+				'IP'		=> ($ip == 'hostname') ? gethostbyaddr($row['ip']) : $row['ip'],
 				'DATE'		=> $user->format_date($row['time']),
 				'ACTION'	=> $row['action'],
 				'ID'		=> $row['id'],
@@ -154,6 +156,7 @@ class connectionlog_module
 
 		$template->assign_vars(array(
 				'U_ACTION'		=> $this->u_action . "&amp;start=$start",
+				'U_HOSTNAME'	=> $this->u_action . "&amp;usearch=$usearch&amp;isearch=$isearch&amp;asearch=$asearch&amp;start=$start&amp;ip=" . (($ip == 'ip') ? 'hostname' : 'ip'),
 				'S_LIMIT_DAYS'	=> $s_limit_days,
 				'S_SORT_KEY'	=> $s_sort_key,
 				'S_SORT_DIR'	=> $s_sort_dir,
