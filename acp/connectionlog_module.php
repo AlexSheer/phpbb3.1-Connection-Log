@@ -118,11 +118,17 @@ class connectionlog_module
 
 		foreach ($log_data as $row)
 		{
+			$date = $user->format_date($row['time']);
+
+			$log_number = ($row['number'] != 1) ? sprintf($user->lang('LOG_LC_INTERVAL'), $row['number'], $config['lc_interval']) : '';
+
+			$action = (!preg_match("#" . $user->lang('ACP_LOGS_FAIL') . "#", $row['action']) ? '<div class="log-success">' . $row['action'] . '</div>' : '<div class="log-fail">' . $row['action'] . '&nbsp;' . $log_number . '</div>');
+
 			$template->assign_block_vars('log', array(
 				'USERNAME'	=> $row['username_full'],
 				'IP'		=> $row['ip'],
-				'DATE'		=> $user->format_date($row['time']),
-				'ACTION'	=> $row['action'],
+				'DATE'		=> $date,
+				'ACTION'	=> $action,
 				'ID'		=> $row['id'],
 				'U_IP'		=> (!empty($row['ip'])) ? $this->u_action . '&amp;whois=true&amp;ip=' . $row['ip'] . '' : '',
 				)
