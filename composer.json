@@ -2,14 +2,14 @@
     "name": "sheer/connectionlog",
     "type": "phpbb-extension",
     "description": "Connection log",
-    "homepage": "http://phpbbguru.net",
-    "version": "0.0.1",
+    "homepage": "https://www.phpbbguru.net/community/viewtopic.php?f=64&t=43557",
+    "version": "1.0.0",
     "time": "2015-03-22",
     "license": "GPL-2.0",
     "authors": [
         {
             "name": "Sheer",
-            "homepage": "http://phpbbguru.net",
+            "homepage": "https://phpbbguru.net",
             "role": "Support team"
         }
     ],
