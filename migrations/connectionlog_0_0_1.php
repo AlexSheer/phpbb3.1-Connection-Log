@@ -74,7 +74,6 @@ class connectionlog_0_0_1 extends \phpbb\db\migration\migration
 				'module_langname'	=> 'ACP_CONNECTION_LOGS',
 				'module_mode'		=> 'connection',
 				'module_auth'		=> 'ext_sheer/connectionlog && acl_a_viewlogs',
-				'module_enabled'	=> true,
 			))),
 		);
 	}
