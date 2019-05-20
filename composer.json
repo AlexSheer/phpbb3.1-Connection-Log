@@ -10,7 +10,7 @@
         {
             "name": "Sheer",
             "homepage": "https://phpbbguru.net",
-            "role": "Support team"
+            "role": "Developer"
         }
     ],
     "require": {
@@ -23,6 +23,12 @@
         "display-name": "Connection Log",
         "soft-require": {
             "phpbb/phpbb": "3.1.*@dev"
+        },
+        "version-check": {
+            "host": "sheer.phpbbguru.net",
+            "ssl": true,
+            "directory": "/versions/delete_pm_from_histoty",
+            "filename": "version.json"
         }
     }
 }
