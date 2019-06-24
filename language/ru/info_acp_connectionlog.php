@@ -38,9 +38,9 @@ $lang = array_merge($lang, array(
 	'ACP_CONNECTION_LOGS'			=> 'Лог подключений',
 	'ACP_CONNECTION_LOGS_EXPLAIN'	=> 'Это список всех подключений к конференции. Вы можете сортировать/фильтровать по имени пользователя, дате, IP-адресу или событию. Вы также можете очистить как отдельные, так и все записи лога.<br /><br /><strong>Подсказка</strong>: Информацию об IP-адресе (сервис Whois) можно получить, кликнув по значению IP (имени хоста) из списка.',
 
-	'LOG_AUTH_SUCCESS'				=> '<strong>Успешное подключение</strong><br />» %s',
-	'LOG_ADMIN_AUTH_SUCCESS'		=> '<strong>Успешное подключение к ACP</strong>',
-	'LOG_AUTH_SUCCESS_AUTO'			=> '<strong>Успешное подключение (Автовход)</strong><br />» %s',
+	'LOG_AUTH_SUCCESS'				=> '<span style="color:#009900;"><strong>Успешное подключение</strong><br />» %s</span>',
+	'LOG_ADMIN_AUTH_SUCCESS'		=> '<span style="color:#009900;"><strong>Успешное подключение к ACP</strong></span>',
+	'LOG_AUTH_SUCCESS_AUTO'			=> '<span style="color:#009900;"><strong>Успешное подключение (Автовход)</strong><br />» %s</span>',
 
 	'LOG_LOGIN_ERROR_USERNAME'		=> '<span style="color:#BC2A4D;"><strong>Отказ</strong> - несуществующий пользователь<br />» %s</span>',
 	'LOG_LOGIN_ERROR_PASSWORD'		=> '<span style="color:#BC2A4D;"><strong>Отказ</strong> - неверный пароль<br />» %s</span>',

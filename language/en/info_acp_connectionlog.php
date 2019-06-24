@@ -38,9 +38,9 @@ $lang = array_merge($lang, array(
 	'ACP_CONNECTION_LOGS'			=> 'Connection Log',
 	'ACP_CONNECTION_LOGS_EXPLAIN'	=> 'This lists all the connections done on board. You can sort/filter by username, date, IP or action. You can also clear individual operations or the log as a whole.<br /><br /><strong>Trick</strong>: You can look up all IPs by clicking on the IP in the column and display <em>Whois</em>.',
 
-	'LOG_AUTH_SUCCESS'				=> '<strong>Connected successfully</strong><br />» %s',
-	'LOG_ADMIN_AUTH_SUCCESS'		=> '<strong>Connected successfully to ACP</strong>',
-	'LOG_AUTH_SUCCESS_AUTO'			=> '<strong>Connected successfully (Autologged)</strong><br />» %s',
+	'LOG_AUTH_SUCCESS'				=> '<span style="color:#009900;"><strong>Connected successfully</strong><br />» %s</span>',
+	'LOG_ADMIN_AUTH_SUCCESS'		=> '<span style="color:#009900;"><strong>Connected successfully to ACP</strong></span>',
+	'LOG_AUTH_SUCCESS_AUTO'			=> '<span style="color:#009900;"><strong>Connected successfully (Autologged)</strong><br />» %s</span>',
 
 	'LOG_LOGIN_ERROR_USERNAME'		=> '<span style="color:#BC2A4D;"><strong>Failure</strong> - non-existent user<br />» %s</span>',
 	'LOG_LOGIN_ERROR_PASSWORD'		=> '<span style="color:#BC2A4D;"><strong>Failure</strong> - incorrect password<br />» %s</span>',

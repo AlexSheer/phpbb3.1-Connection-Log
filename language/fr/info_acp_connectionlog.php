@@ -38,9 +38,9 @@ $lang = array_merge($lang, array(
 	'ACP_CONNECTION_LOGS'			=> 'Journal des connexions',
 	'ACP_CONNECTION_LOGS_EXPLAIN'	=> 'Liste l’ensemble des connexions sur le forum. Vous pouvez trier/filtrer par nom d’utilisateur, date, adresse IP ou par action. Vous pouvez aussi supprimer certaines opérations ou même l’intégralité de la log. <br /><br /><strong>Astuce</strong> : Vous pouvez obtenir des informations plus détaillées sur chaque adresse IP en cliquant dessus pour afficher le <em>Whois</em>.',
 
-	'LOG_AUTH_SUCCESS'				=> '<strong>Connexion réussie</strong><br />» %s',
-	'LOG_ADMIN_AUTH_SUCCESS'		=> '<strong>Connexion réussie à l’ACP</strong>',
-	'LOG_AUTH_SUCCESS_AUTO'			=> '<strong>Connexion réussie (Autologged)</strong><br />» %s',
+	'LOG_AUTH_SUCCESS'				=> '<span style="color:#009900;"><strong>Connexion réussie</strong><br />» %s</span>',
+	'LOG_ADMIN_AUTH_SUCCESS'		=> '<span style="color:#009900;"><strong>Connexion réussie à l’ACP</strong></span>',
+	'LOG_AUTH_SUCCESS_AUTO'			=> '<span style="color:#009900;"><strong>Connexion réussie (Autologged)</strong><br />» %s</span>',
 
 	'LOG_LOGIN_ERROR_USERNAME'		=> '<span style="color:#BC2A4D;"><strong>Erreur</strong> - Utilisateur inexistant<br />» %s</span>',
 	'LOG_LOGIN_ERROR_PASSWORD'		=> '<span style="color:#BC2A4D;"><strong>Erreur</strong> - Mot de passe incorrect<br />» %s</span>',
