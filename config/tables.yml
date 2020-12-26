@@ -1,2 +1,2 @@
 parameters:
-    tables.connectionlog: %core.table_prefix%connect_log
+    tables.connectionlog: '%core.table_prefix%connect_log'
