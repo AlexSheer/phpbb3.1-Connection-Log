@@ -5,27 +5,27 @@ services:
     sheer.connectionlog.listener:
         class: sheer\connectionlog\event\listener
         arguments:
-            - @template
-            - @request
-            - @user
-            - @auth
-            - @dbal.conn
-            - @config
-            - @log
-            - %core.table_prefix%
-            - %core.root_path%
-            - %core.php_ext%
+            - '@template'
+            - '@request'
+            - '@user'
+            - '@auth'
+            - '@dbal.conn'
+            - '@config'
+            - '@log'
+            - '%core.table_prefix%'
+            - '%core.root_path%'
+            - '%core.php_ext%'
         tags:
             - { name: event.listener }
 
     sheer.connectionlog.cron.task.tidy_lc:
         class: sheer\connectionlog\cron\task\tidy_lc
         arguments:
-            - @config
-            - @dbal.conn
-            - @user
-            - @log
-            - %tables.connectionlog%
+            - '@config'
+            - '@dbal.conn'
+            - '@user'
+            - '@log'
+            - '%tables.connectionlog%'
         calls:
             - [set_name, [cron.task.core.sheer_tidy_lc]]
         tags:
