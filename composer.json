@@ -2,15 +2,15 @@
     "name": "sheer/connectionlog",
     "type": "phpbb-extension",
     "description": "Connection log",
-    "homepage": "http://phpbbguru.net",
-    "version": "0.0.1",
+    "homepage": "https://www.phpbbguru.net/community/viewtopic.php?f=64&t=43557",
+    "version": "1.0.0",
     "time": "2015-03-22",
     "license": "GPL-2.0",
     "authors": [
         {
             "name": "Sheer",
-            "homepage": "http://phpbbguru.net",
-            "role": "Support team"
+            "homepage": "https://phpbbguru.net",
+            "role": "Developer"
         }
     ],
     "require": {
@@ -23,6 +23,12 @@
         "display-name": "Connection Log",
         "soft-require": {
             "phpbb/phpbb": "3.1.*@dev"
+        },
+        "version-check": {
+            "host": "sheer.phpbbguru.net",
+            "ssl": true,
+            "directory": "/versions/delete_pm_from_histoty",
+            "filename": "version.json"
         }
     }
 }

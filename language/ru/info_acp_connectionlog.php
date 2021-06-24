@@ -49,6 +49,7 @@ $lang = array_merge($lang, array(
 	'LOG_ACTIVE_ERROR'				=> '<span style="color:#BC2A4D;"><strong>Отказ</strong> - пользователь не активирован<br />» %s</span>',
 	'LOG_USERNAME_FAIL_BAN'			=> '<span style="color:#BC2A4D;"><strong>Отказ</strong> - имя пользователя заблокировано по причине<br />» %s</span>',
 	'LOG_ADMIN_AUTH_FAIL'			=> '<span style="color:#BC2A4D;"><strong>Отказ подключения к ACP</strong> - неверный пароль</span>',
+	'LOG_FORM_INVALID'				=> 'Ошибка отправки формы<br />» %s',
 
 	'LOG_CLEAR_CONNECTION_LOG'		=> 'Очищен лог подключений',
 	'ACP_LOGS_SORT'					=> 'Фильтр',
