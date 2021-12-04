@@ -69,7 +69,9 @@ class tidy_lc extends \phpbb\cron\task\base
 		$diff = time() - ($this->config['lc_expire_days'] * 86400);
 		$sql = 'DELETE FROM ' . $this->connect_log_table . ' WHERE log_time < '. $diff . '';
 		$this->db->sql_query($sql);
-		$this->phpbb_log->add('admin', $this->user->data['user_id'], $this->user->data['session_ip'] ?? '', 'LOG_CLEAR_CONNECTION_LOG', time(), false);
+		$user_id = (empty($this->user->data)) ? ANONYMOUS : $this->user->data['user_id'];
+		$user_ip = (empty($this->user->ip)) ? '' : $this->user->ip;
+		$this->phpbb_log->add('admin', $user_id, $user_ip, 'LOG_CLEAR_CONNECTION_LOG', time(), false);
 		$this->config->set('lc_prune_last_gc', time(), true);
 	}
 }
